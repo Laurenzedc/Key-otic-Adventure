@@ -1,3 +1,5 @@
+![Game Cover](markdown/1.png)
+
 # Key-otic Adventure – A Console-Based OOP Puzzle Game
 
 ## Overview
