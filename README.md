@@ -3,3 +3,11 @@ Key-otic Adventure is a story-driven Java console game inspired by escape rooms 
 You play as a trapped adventurer who must complete five levels, solve puzzles, choose paths, and switch between characters to survive. Each level contains obstacles and directional choices that lead to different story outcomes, eventually allowing you to collect keys needed to open the Final Chest containing the Ultimate Gem—your only way home.
 
 This project showcases practical applications of Object-Oriented Programming (OOP) principles, modular coding structure, puzzle classes, character management, level logic, and randomization.
+
+## OOP Concepts Applied
+### Encapsulation
+- Sensitive data such as character stats, inventory, and game direction lists are declared private.
+- Accessed and modified only through methods (e.g., getHP(), useAbility(), addItem()), protecting data integrity.
+### Inheritance
+### Polymorphism
+### Abstraction
