@@ -8,6 +8,11 @@ This project showcases practical applications of Object-Oriented Programming (OO
 ### Encapsulation
 - Sensitive data such as character stats, inventory, and game direction lists are declared private.
 - Accessed and modified only through methods (e.g., getHP(), useAbility(), addItem()), protecting data integrity.
-### Inheritance
+### Abstraction
+- Each main feature is separated into its own class:
+           Puzzle.java hides puzzle logic.
+           Levels.java abstracts level progression.
+           Items.java handles inventory operations.
+- The main game does not need to know the internal details—only the methods it calls.
 ### Polymorphism
 ### Abstraction
