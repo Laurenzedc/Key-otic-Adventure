@@ -1,6 +1,6 @@
+# Key-otic Adventure – A Console-Based OOP Puzzle Game
 <img src="markdown/1.png" alt="Game Cover" width="1000" height="auto" />
 
-# Key-otic Adventure – A Console-Based OOP Puzzle Game
 
 ## Overview
 Key-otic Adventure is a story-driven Java console game inspired by escape rooms and Jumanji-style game worlds. You play as a trapped adventurer who must complete five levels, solve puzzles, choose paths, and switch between characters to survive. Each level includes obstacles and directional choices that lead to different story outcomes, allowing you to collect keys required to open the Final Chest containing the Ultimate Gem—your only way home.
