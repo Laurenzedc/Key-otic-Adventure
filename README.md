@@ -25,5 +25,14 @@ This project demonstrates Object-Oriented Programming (OOP) concepts, modular cl
 
 ### 4. Inheritance
 - The character system is designed to support extended character types.
-- A base structure can be inherited by subclasses to override or enhance abilities.
+- Subclasses can inherit a base structure to override or enhance abilities.
 - This shows potential for future expansion without rewriting core logic.
+
+## ▶️ How to Run the Program
+
+### **Compilation**
+Open a terminal inside the project folder and type:
+
+```bash
+javac Main.java
+
