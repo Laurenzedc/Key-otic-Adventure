@@ -19,7 +19,11 @@ This project demonstrates Object-Oriented Programming (OOP) concepts, modular cl
 - The main game only interacts with exposed methods and does not see internal implementations.
 
 ### 3. Polymorphism
-(Explanation here once you add content)
+- Methods behave differently depending on the active character.
+- Overridden methods allow characters to respond uniquely to puzzles or events.
+- The game engine uses generalized method names that trigger personalized behavior at runtime.
 
 ### 4. Inheritance
-(Explanation here once you add content)
+- The character system is designed to support extended character types.
+- A base structure can be inherited by subclasses to override or enhance abilities.
+- This shows potential for future expansion without rewriting core logic.
