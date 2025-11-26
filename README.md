@@ -36,10 +36,4 @@ Open a terminal inside the project folder and type:
 ```bash
 javac Main.java
 
-### **Running the Game**
-
-```bash
-java Main
-
-The console will launch the starting menu, character selection, and first level.
 
