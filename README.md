@@ -37,3 +37,20 @@ Open a terminal inside the project folder and type:
 javac Main.java
 
 
+
+## 📚 8. Other Sections
+
+### **a. Future Enhancements**
+- Add saving/loading system  
+- Add GUI version (JavaFX)  
+- Improve AI behavior for enemies  
+- Add more puzzle types (logic grid, sequence decoding)  
+- Add achievements and secret endings  
+
+### **b. References**
+- Oracle Java Documentation  
+- StackOverflow community discussions  
+- W3Schools Java tutorials  
+- GeeksForGeeks OOP resources  
+
+
