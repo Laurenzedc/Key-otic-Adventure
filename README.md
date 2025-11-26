@@ -35,8 +35,7 @@ Open a terminal inside the project folder and type:
 
 ```bash
 javac Main.java
-
-
+```
 
 ## 📚 8. Other Sections
 
@@ -52,5 +51,4 @@ javac Main.java
 - StackOverflow community discussions  
 - W3Schools Java tutorials  
 - GeeksForGeeks OOP resources  
-
 
