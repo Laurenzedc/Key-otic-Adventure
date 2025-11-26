@@ -1,4 +1,4 @@
-
+<img src="markdown/1.png" alt="Game Cover" width="800" height="auto" />
 
 # Key-otic Adventure – A Console-Based OOP Puzzle Game
 
