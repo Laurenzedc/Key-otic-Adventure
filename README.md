@@ -10,7 +10,7 @@ This project demonstrates Object-Oriented Programming (OOP) concepts, modular cl
 
 
 <h1 align="center">
-  <font color="#ff6600">Character Showcase</font>
+  <font color="#ff6600">**Character Showcase**</font>
 </h1>
 
 
