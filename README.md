@@ -23,23 +23,31 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 <small>
 <table width="100%" style="border-collapse: collapse;" border="1">
   <tr style="background-color: #f0f0f0;">
-    <th colspan="1">Draven Stoneforge (Bravestone Hero)</th>
-    <th rowspan="6" align="center">
-      <img src="images/draven.png" alt="Draven Stoneforge" width="180">
-    </th>
+    <th colspan="2">Draven Stoneforge (Bravestone Hero)</th>
   </tr>
-  <tr><td><b>Role</b></td></tr>
-  <tr><td>Powerhouse / Fighter</td></tr>
-  <tr><td><b>Strengths</b></td></tr>
-  <tr><td>Very high Power<br>Immune to animal attacks once per level<br>Breaks physical barriers</td></tr>
-  <tr><td><b>Weaknesses</b></td></tr>
-  <tr><td>VERY low Intelligence<br>Struggles with riddles, codes, logic puzzles<br>Takes double damage from mental traps</td></tr>
-  <tr><td><b>Special Ability</b></td></tr>
-  <tr><td><b>Titan Smash</b>: Breaks one obstacle without solving puzzle (once per level)</td></tr>
-  <tr><td><b>Stats</b></td></tr>
-  <tr><td>Power: ⭐⭐⭐⭐⭐ | Intelligence: ⭐ | Agility: ⭐⭐⭐ | Survival: ⭐⭐⭐⭐ | Lives: 3</td></tr>
+  <tr>
+    <td colspan="2" style="padding: 10px;">
+      <b>Role:</b> Powerhouse / Fighter<br><br>
+      <b>Strengths:</b><br>
+      - Very high Power<br>
+      - Immune to animal attacks once per level<br>
+      - Breaks physical barriers<br><br>
+      <b>Weaknesses:</b><br>
+      - VERY low Intelligence<br>
+      - Struggles with riddles, codes, logic puzzles<br>
+      - Takes double damage from mental traps<br><br>
+      <b>Special Ability:</b> <b>Titan Smash</b>: Breaks one obstacle without solving puzzle (once per level)<br><br>
+      <b>Stats:</b> Power: ⭐⭐⭐⭐⭐ | Intelligence: ⭐ | Agility: ⭐⭐⭐ | Survival: ⭐⭐⭐⭐ | Lives: 3
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="images/draven.png" alt="Draven Stoneforge" width="180">
+    </td>
+  </tr>
 </table>
 </small>
+
 
 
 ---
