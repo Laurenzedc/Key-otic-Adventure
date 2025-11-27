@@ -29,108 +29,12 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 </p>
 <h1 align="center">🧙‍♂️ Character Descriptions</h1>
 
----
-
-## 🟥 **CHARACTER 1 — Draven Stoneforge (The Bravestone-Inspired Hero)**
-**Role:** Powerhouse / Fighter
-
-### 🛡️ Strengths
-- Very high Power  
-- Immune to animal attacks once per level  
-- Breaks physical barriers (vines, rocks, doors)  
-
-### 💀 Weaknesses
-- VERY low Intelligence  
-- Struggles with riddles, codes, or logic puzzles  
-- Takes double damage from mental traps  
-
-### ⚡ Special Ability — **"Titan Smash"**
-Breaks any one obstacle without solving the puzzle (usable once per level).
-
-### 📊 Stats
-- **Power:** ⭐⭐⭐⭐⭐ (5/5)  
-- **Intelligence:** ⭐ (1/5)  
-- **Agility:** ⭐⭐⭐ (3/5)  
-- **Survival:** ⭐⭐⭐⭐ (4/5)
-
-**❤️ Lives:** 3
-
----
-
-## 🟦 **CHARACTER 2 — Selene Quickstep (Agility Specialist)**
-**Role:** Speed / Escape Artist
-
-### 🛡️ Strengths
-- Dodges traps automatically  
-- Perfect for timing puzzles  
-- Crosses unstable terrain without falling  
-
-### 💀 Weaknesses
-- Low Power  
-- Cannot lift heavy items or break doors  
-- Fails strength-based tasks unless using an item  
-
-### ⚡ Special Ability — **"Flash Step"**
-Skip one timing-based puzzle (falling rocks, moving platforms, quick patterns).
-
-### 📊 Stats
-- **Power:** ⭐⭐ (2/5)  
-- **Intelligence:** ⭐⭐⭐ (3/5)  
-- **Agility:** ⭐⭐⭐⭐⭐ (5/5)  
-- **Survival:** ⭐⭐ (2/5)
-
-**❤️ Lives:** 3
-
----
-
-## 🟩 **CHARACTER 3 — Orion Mindweaver (Puzzle Master)**
-**Role:** Intelligence / Decoder
-
-### 🛡️ Strengths
-- Excels at riddles, clues, and cipher puzzles  
-- Automatically gains an extra hint for any puzzle  
-- Analyzes rooms to reduce trap danger  
-
-### 💀 Weaknesses
-- Fragile — low survival and power  
-- Takes double damage from physical traps  
-
-### ⚡ Special Ability — **"Mental Overclock"**
-Instantly solves ONE riddle or cipher (once per level).
-
-### 📊 Stats
-- **Power:** ⭐ (1/5)  
-- **Intelligence:** ⭐⭐⭐⭐⭐ (5/5)  
-- **Agility:** ⭐⭐ (2/5)  
-- **Survival:** ⭐⭐ (2/5)
-
-**❤️ Lives:** 3
-
----
-
-## 🟨 **CHARACTER 4 — Kaya Wildroot (Tracker / Survivalist)**
-**Role:** Survival / Navigator / Nature Expert
-
-### 🛡️ Strengths
-- Knows safe paths automatically  
-- Immune to poison, plants, and natural traps  
-- Gains extra items from nature-themed puzzles  
-
-### 💀 Weaknesses
-- Low Intelligence for complex logic puzzles  
-- Cannot decode advanced symbols without help  
-
-### ⚡ Special Ability — **"Nature’s Insight"**
-Reveals one hidden clue or safe path per level  
-(helps in maze, echo tests, jungle paths).
-
-### 📊 Stats
-- **Power:** ⭐⭐⭐ (3/5)  
-- **Intelligence:** ⭐⭐ (2/5)  
-- **Agility:** ⭐⭐⭐⭐ (4/5)  
-- **Survival:** ⭐⭐⭐⭐⭐ (5/5)
-
-**❤️ Lives:** 3
+| **Character** | **Role** | **Strengths** | **Weaknesses** | **Special Ability** | **Power** | **Intelligence** | **Agility** | **Survival** | **Lives** |
+|---------------|---------|---------------|----------------|------------------|-----------|----------------|------------|-------------|-----------|
+| **Draven Stoneforge**<br>(The Powerhouse) | Powerhouse / Fighter | - Very high Power<br>- Immune to animal attacks once per level<br>- Breaks physical barriers | - VERY low Intelligence<br>- Struggles with riddles, codes, logic puzzles<br>- Takes double damage from mental traps | **Titan Smash**: Breaks any one obstacle without solving the puzzle (once per level) | ⭐⭐⭐⭐⭐ | ⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | 3 |
+| **Selene Quickstep**<br>(The Agility Specialist) | Speed / Escape Artist | - Dodges traps automatically<br>- Perfect for timing puzzles<br>- Crosses unstable terrain without falling | - Low Power<br>- Cannot lift heavy items or break doors<br>- Fails strength-based tasks unless using an item | **Flash Step**: Skip one timing-based puzzle (falling rocks, moving platforms, quick patterns) | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | 3 |
+| **Orion Mindweaver**<br>(The Puzzle Master) | Intelligence / Decoder | - Excels at riddles, clues, cipher puzzles<br>- Gains extra hint for any puzzle<br>- Analyzes rooms to reduce trap danger | - Fragile — low survival and power<br>- Takes double damage from physical traps | **Mental Overclock**: Instantly solves ONE riddle or cipher (once per level) | ⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐ | 3 |
+| **Kaya Wildroot**<br>(The Navigator) | Survival / Navigator / Nature Expert | - Knows safe paths automatically<br>- Immune to poison, plants, and natural traps<br>- Gains extra items from nature-themed puzzles | - Low Intelligence for complex logic puzzles<br>- Cannot decode advanced symbols without help | **Nature’s Insight**: Reveals one hidden clue or safe path per level (maze, echo tests, jungle paths) | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 3 |
 
 ---
 
