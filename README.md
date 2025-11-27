@@ -30,7 +30,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 <small>
 <table width="100%" style="border-collapse: collapse;" border="1">
   <tr style="background-color: #f0f0f0;">
-    <th colspan="2">Draven Stoneforge (Bravestone Hero)</th>
+    <th colspan="2">Draven Stoneforge (The Powerhouse)</th>
     <th>Character</th>
   </tr>
   <tr>
@@ -62,7 +62,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 <small>
 <table width="100%" style="border-collapse: collapse;" border="1">
   <tr style="background-color: #f0f0f0;">
-    <th colspan="2">Selene Quickstep (Agility Specialist)</th>
+    <th colspan="2">Selene Quickstep (The Agility Specialist)</th>
     <th>Character</th>
   </tr>
   <tr>
@@ -94,7 +94,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 
 <table width="100%" style="border-collapse: collapse;" border="1">
   <tr style="background-color: #f0f0f0;">
-    <th colspan="2">Orion Mindweaver (Puzzle Master)</th>
+    <th colspan="2">Orion Mindweaver (The Puzzle Master)</th>
     <th>Character</th>
   </tr>
   <tr>
@@ -126,7 +126,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 
 <table width="100%" style="border-collapse: collapse;" border="1">
   <tr style="background-color: #f0f0f0;">
-    <th colspan="2">Kaya Wildroot (Tracker / Survivalist)</th>
+    <th colspan="2">Kaya Wildroot (The Navigator)</th>
     <th>Character</th>
   </tr>
   <tr>
