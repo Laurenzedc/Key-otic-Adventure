@@ -1,57 +1,62 @@
-# Key-otic Adventure – A Console-Based OOP Puzzle Game
-![Game Cover](images/1.png)
+# ✨ **Key-otic Adventure – A Console-Based OOP Puzzle Game**
 
+<p align="center">
+  <img src="images/1.png" width="600">
+</p>
 
-## Overview
-Key-otic Adventure is a story-driven Java console game inspired by escape rooms and Jumanji-style game worlds. You play as a trapped adventurer who must complete five levels, solve puzzles, choose paths, and switch between characters to survive. Each level includes obstacles and directional choices that lead to different story outcomes, allowing you to collect keys required to open the Final Chest containing the Ultimate Gem—your only way home.
+---
 
-This project demonstrates Object-Oriented Programming (OOP) concepts, modular class structure, puzzle and level logic, and randomization.
+## 🌍 **Overview**
+**Key-otic Adventure** is a story-driven Java console game inspired by escape rooms and Jumanji-style game worlds.  
+You play as a trapped adventurer who must complete five levels, solve puzzles, choose paths, and switch between unique characters to survive.
 
+Each level contains:
+- 🧩 **Puzzles**
+- 🧭 **Directional choices**
+- 🔑 **Keys to collect**
+- 📜 **Multiple outcomes**
 
+Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—your only way home.
+
+---
 
 <h1 align="center">
-  <font color="#ff6600">Character Showcase</font>
+  <font color="#ff6600">✨ Character Showcase ✨</font>
 </h1>
 
+<p align="center">
+  <img src="images/2.png" width="600">
+</p>
 
-![Characters](images/2.png)
+---
 
+## 🧱 **OOP Concepts Applied**
 
+### 🔒 **1. Encapsulation**
+- Private data such as HP, inventory, and stats.
+- Controlled access via getters/setters (`getHP()`, `addItem()`, etc.).
 
+### 🎭 **2. Polymorphism**
+- Characters override methods for unique interactions.
+- Puzzle responses and abilities differ per character.
 
-## OOP Concepts Applied
+### 🧩 **3. Abstraction**
+- `Puzzle.java` → Handles puzzle logic  
+- `Levels.java` → Manages progression  
+- `Items.java` → Inventory and item handling  
+- `Game` only interacts with exposed methods.
 
-### 1. Encapsulation
-- Sensitive data such as character stats, inventory, and direction lists are kept private.
-- Access and modification are controlled through methods like `getHP()`, `useAbility()`, and `addItem()`.
+### 🧬 **4. Inheritance**
+- Character classes inherit from a base template.
+- Easily extendable for future characters or abilities.
 
-### 2. Abstraction
-- Major game features are separated into dedicated classes:
-  - `Puzzle.java` handles puzzle logic.
-  - `Levels.java` manages level progression.
-  - `Items.java` manages inventory actions.
-- The main game only interacts with exposed methods and does not see internal implementations.
+---
 
-### 3. Polymorphism
-- Methods behave differently depending on the active character.
-- Overridden methods allow characters to respond uniquely to puzzles or events.
-- The game engine uses generalized method names that trigger personalized behavior at runtime.
+## ▶️ **How to Run the Program**
 
-### 4. Inheritance
-- The character system is designed to support extended character types.
-- Subclasses can inherit a base structure to override or enhance abilities.
-- This shows potential for future expansion without rewriting core logic.
-
-## ▶️ How to Run the Program
-
-### **Compilation**
-Open a terminal inside the project folder and type:
-
+### **Compile**
 ```bash
 javac Main.java
-```
-
-
 
 
 ## 📚 Other Sections
