@@ -29,12 +29,75 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 </p>
 <h1 align="center">🧙‍♂️ Character Descriptions</h1>
 
-| **Character** | **Role** | **Strengths** | **Weaknesses** | **Special Ability** | **Power** | **Intelligence** | **Agility** | **Survival** | **Lives** |
-|---------------|---------|---------------|----------------|------------------|-----------|----------------|------------|-------------|-----------|
-| **Draven Stoneforge**<br>(The Powerhouse) | Powerhouse / Fighter | - Very high Power<br>- Immune to animal attacks once per level<br>- Breaks physical barriers | - VERY low Intelligence<br>- Struggles with riddles, codes, logic puzzles<br>- Takes double damage from mental traps | **Titan Smash**: Breaks any one obstacle without solving the puzzle (once per level) | ⭐⭐⭐⭐⭐ | ⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | 3 |
-| **Selene Quickstep**<br>(The Agility Specialist) | Speed / Escape Artist | - Dodges traps automatically<br>- Perfect for timing puzzles<br>- Crosses unstable terrain without falling | - Low Power<br>- Cannot lift heavy items or break doors<br>- Fails strength-based tasks unless using an item | **Flash Step**: Skip one timing-based puzzle (falling rocks, moving platforms, quick patterns) | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | 3 |
-| **Orion Mindweaver**<br>(The Puzzle Master) | Intelligence / Decoder | - Excels at riddles, clues, cipher puzzles<br>- Gains extra hint for any puzzle<br>- Analyzes rooms to reduce trap danger | - Fragile — low survival and power<br>- Takes double damage from physical traps | **Mental Overclock**: Instantly solves ONE riddle or cipher (once per level) | ⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐ | 3 |
-| **Kaya Wildroot**<br>(The Navigator) | Survival / Navigator / Nature Expert | - Knows safe paths automatically<br>- Immune to poison, plants, and natural traps<br>- Gains extra items from nature-themed puzzles | - Low Intelligence for complex logic puzzles<br>- Cannot decode advanced symbols without help | **Nature’s Insight**: Reveals one hidden clue or safe path per level (maze, echo tests, jungle paths) | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 3 |
+<small>
+<table>
+  <thead>
+    <tr>
+      <th>Character</th>
+      <th>Role</th>
+      <th>Strengths</th>
+      <th>Weaknesses</th>
+      <th>Special Ability</th>
+      <th>Power</th>
+      <th>Intelligence</th>
+      <th>Agility</th>
+      <th>Survival</th>
+      <th>Lives</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Draven Stoneforge</b><br>(The Bravestone-Inspired Hero)</td>
+      <td>Powerhouse / Fighter</td>
+      <td>Very high Power<br>Immune to animal attacks once per level<br>Breaks physical barriers</td>
+      <td>VERY low Intelligence<br>Struggles with riddles, codes, logic puzzles<br>Takes double damage from mental traps</td>
+      <td><b>Titan Smash</b>: Breaks one obstacle without solving puzzle (once per level)</td>
+      <td>⭐⭐⭐⭐⭐</td>
+      <td>⭐</td>
+      <td>⭐⭐⭐</td>
+      <td>⭐⭐⭐⭐</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td><b>Selene Quickstep</b><br>(Agility Specialist)</td>
+      <td>Speed / Escape Artist</td>
+      <td>Dodges traps automatically<br>Perfect for timing puzzles<br>Crosses unstable terrain without falling</td>
+      <td>Low Power<br>Cannot lift heavy items or break doors<br>Fails strength-based tasks unless using an item</td>
+      <td><b>Flash Step</b>: Skip one timing-based puzzle</td>
+      <td>⭐⭐</td>
+      <td>⭐⭐⭐</td>
+      <td>⭐⭐⭐⭐⭐</td>
+      <td>⭐⭐</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td><b>Orion Mindweaver</b><br>(Puzzle Master)</td>
+      <td>Intelligence / Decoder</td>
+      <td>Excels at riddles, clues, cipher puzzles<br>Gains extra hint for any puzzle<br>Analyzes rooms to reduce trap danger</td>
+      <td>Fragile — low survival and power<br>Takes double damage from physical traps</td>
+      <td><b>Mental Overclock</b>: Instantly solves ONE riddle or cipher (once per level)</td>
+      <td>⭐</td>
+      <td>⭐⭐⭐⭐⭐</td>
+      <td>⭐⭐</td>
+      <td>⭐⭐</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td><b>Kaya Wildroot</b><br>(Tracker / Survivalist)</td>
+      <td>Survival / Navigator / Nature Expert</td>
+      <td>Knows safe paths automatically<br>Immune to poison, plants, and natural traps<br>Gains extra items from nature-themed puzzles</td>
+      <td>Low Intelligence for complex logic puzzles<br>Cannot decode advanced symbols without help</td>
+      <td><b>Nature’s Insight</b>: Reveals one hidden clue or safe path per level</td>
+      <td>⭐⭐⭐</td>
+      <td>⭐⭐</td>
+      <td>⭐⭐⭐⭐</td>
+      <td>⭐⭐⭐⭐⭐</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</small>
+
 
 ---
 
