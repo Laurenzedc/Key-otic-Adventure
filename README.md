@@ -1,7 +1,7 @@
 # ✨ **Key-otic Adventure – A Console-Based OOP Puzzle Game**
 
 <p align="center">
-  <img src="images/1.png" width="600">
+![Game Cover](images/1.png)
 </p>
 
 ---
