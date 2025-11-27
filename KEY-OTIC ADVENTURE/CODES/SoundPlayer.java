@@ -4,11 +4,11 @@ import javax.sound.sampled.*;
 
 public class SoundPlayer {
 
-    private static Clip bgmClip;  // for looping background music (menu, traveling)
-    private static Clip sfxClip;  // for one-time sound effects (win, lose, correct, wrong)
+    private static Clip bgmClip;  
+    private static Clip sfxClip;  
 
     // ============================================================
-    // PLAY ONE-TIME SOUND (correct, wrong, win, lose)
+    // PLAY ONE-TIME SOUND 
     // ============================================================
     public static void playSound(String fileName) {
         try {
@@ -20,7 +20,6 @@ public class SoundPlayer {
 
             AudioInputStream audioInput = AudioSystem.getAudioInputStream(soundURL);
 
-            // Stop previous SFX if still running
             if (sfxClip != null) {
                 if (sfxClip.isRunning()) sfxClip.stop();
                 sfxClip.close();
@@ -28,7 +27,7 @@ public class SoundPlayer {
 
             sfxClip = AudioSystem.getClip();
             sfxClip.open(audioInput);
-            sfxClip.start();  // plays until finished
+            sfxClip.start();  
 
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             System.out.println("Error playing sound " + fileName + ": " + e.getMessage());
@@ -39,7 +38,7 @@ public class SoundPlayer {
     // PLAY LOOPING BACKGROUND MUSIC
     // ============================================================
     public static void playLoop(String fileName) {
-        stopLoop(); // stop any previous bgm
+        stopLoop(); 
 
         try {
             URL soundURL = SoundPlayer.class.getResource("/sounds/" + fileName);

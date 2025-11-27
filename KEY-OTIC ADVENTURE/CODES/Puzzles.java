@@ -203,15 +203,14 @@ public class Puzzles {
             String ans = askValidatedAnswer(game);
 
             if (isCorrect(ans)) {
-                SoundPlayer.playSound("correct.wav");   // ✅ correct answer sound
+                SoundPlayer.playSound("correct.wav");   
                 System.out.println(successText);
                 grantReward(game);
                 game.heroDialogue("success", this);
                 game.reactionScene("success");
                 return true;
             }
-            
-            SoundPlayer.playSound("wrong.wav");         // ❌ wrong answer sound
+        
             System.out.println(failureText);
             
 

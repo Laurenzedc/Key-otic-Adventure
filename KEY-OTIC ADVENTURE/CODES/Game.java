@@ -77,7 +77,7 @@ public class Game {
     }
 
     // ============================================================
-    // INTRO STORY (NO SOUND HERE, ONLY TEXT)
+    // INTRO STORY 
     // ============================================================
 
     private void printIntroStory() {
@@ -98,7 +98,6 @@ public class Game {
     // ============================================================
 
     public void start() {
-        // 🔊 Play intro music right away
         SoundPlayer.playLoop("intro_music.wav");
 
         printIntroStory();
@@ -107,19 +106,16 @@ public class Game {
         if (!readLine().trim().toLowerCase().startsWith("y")) {
             System.out.println("\nYou step away from the mystical board...");
             System.out.println("The drums fade into silence.");
-            SoundPlayer.stopLoop(); // stop intro if player quits
+            SoundPlayer.stopLoop(); 
             return;
         }
 
-        // Show map while intro music is still playing
         showMap();
         System.out.print("\nPress ENTER to continue...");
         readLine();
 
-        // 🔇 Stop intro music after map + ENTER
         SoundPlayer.stopLoop();
 
-        // 🎵 Start menu music for character selection + hub area
         SoundPlayer.playLoop("menu_music.wav");
 
         System.out.println();
@@ -142,8 +138,6 @@ public class Game {
         // ========================================================
         for (int i = 0; i < levels.length; i++) {
 
-            // Before entering a level, stop menu music
-            // (Option B: menu music continues until we reach this point)
             SoundPlayer.stopLoop();
 
             resetAllCharacterAbilities();
@@ -169,25 +163,16 @@ public class Game {
                 return;
             }
 
-            // Level finished successfully
             giveLevelReward(levelNumber);
 
-            // If NOT the last level → go to hub (map + character switch)
             if (i < levels.length - 1) {
 
-                // 🎵 Turn menu music back on while in hub (map + switching)
                 SoundPlayer.playLoop("menu_music.wav");
 
                 askToShowMap("choosing your next destination");
                 offerOptionalCharacterSwitch();
 
-                // Do NOT stop here — menu music keeps playing
-                // until the next loop iteration, where we call stopLoop()
-                // right before entering the next level.
-
             } else {
-                // FINAL LEVEL (Level 5) → do NOT ask map / switch
-                // go straight to final banner + sound
                 printGameCompletion();
                 return;
             }
@@ -248,8 +233,6 @@ public class Game {
                 if (chosen != null) {
                     currentHero = chosen;
                     printCentered("You are now playing as: " + chosen.getName());
-                    // ❌ Removed SoundPlayer.stopLoop() here
-                    // Menu music should continue into hub before Level 1
                     return;
                 }
 
@@ -472,19 +455,24 @@ public class Game {
 
     public void loseLives(int amount, Puzzles.Puzzle puzzle) {
         currentHero.loseLives(amount);
-        System.out.println("\nYou lost " + amount + " life!");
-
-        if (!currentHero.isAlive()) {
-            System.out.println(currentHero.getName() + " has fallen!");
-
-            if (!hasAnyLivingCharacter()) {
-                printCentered("NO CHARACTERS LEFT.");
-                return;
-            }
-
-            forceSwitchToAliveHero();
+    
+        if (currentHero.isAlive()) {
+            SoundPlayer.playSound("life_lost.wav");
+            System.out.println("\nYou lost " + amount + " life!");
+            return; 
         }
-    }
+    
+        SoundPlayer.playSound("character_dead.wav");
+        System.out.println("\nYou lost " + amount + " life!");
+        System.out.println(currentHero.getName() + " has fallen!");
+    
+        if (!hasAnyLivingCharacter()) {
+            printCentered("NO CHARACTERS LEFT.");
+            return; 
+        }
+    
+        forceSwitchToAliveHero();
+    }    
 
     public boolean hasAnyLivingCharacter() {
         return heroes.stream().anyMatch(Characters.Character::isAlive);
@@ -635,35 +623,46 @@ public class Game {
     // ============================================================
 
     private void printGameCompletion() {
-        // Stop any leftover looping music
+
         SoundPlayer.stopLoop();
-
-        // Play win SFX once
+    
         SoundPlayer.playSound("win_game.wav");
-
+    
+        try {
+            Thread.sleep(3000); 
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    
+        System.out.println();
         printCentered("=========================================");
         printCentered("         YOU HAVE FINISHED THE GAME       ");
         printCentered("=========================================\n");
-
+    
         System.out.println("The board folds into darkness...");
         System.out.println("But a glow remains within the Heart of the Game.");
         System.out.println();
     }
-
+    
     private void gameOver() {
-        // Stop any leftover looping music
         SoundPlayer.stopLoop();
-
-        // Play lose SFX once
+    
         SoundPlayer.playSound("lose_game.wav");
-
+    
+        try {
+            Thread.sleep(3000); 
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    
         printCentered("=========================================");
-        printCentered("                 GAME OVER                ");
-        printCentered("==========================================\n");
+        printCentered("                GAME OVER                ");
+        printCentered("=========================================\n");
         System.out.println("The board seals shut.");
         System.out.println("Your journey ends here, forever trap in this game.");
         System.out.println();
     }
+    
 
     // ============================================================
     // UTILITY

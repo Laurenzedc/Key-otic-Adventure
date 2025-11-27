@@ -6,11 +6,8 @@ public class Levels {
     public abstract static class LevelBase {
 
         public abstract List<Puzzles.Puzzle> getPuzzles();
-
         public abstract int getLevelNumber();
-
         public abstract String getNarration();
-
         public Items.Item getLevelReward() { return null; }
 
         public boolean play(Game game) {
@@ -18,7 +15,6 @@ public class Levels {
             System.out.println("\n" + getNarration());
             game.getInventory().showInventory();
 
-            // 🔊 Play level obstacle theme (different per level)
             SoundPlayer.playLoop("obstacle_level" + getLevelNumber() + ".wav");
 
             List<Puzzles.Puzzle> all = getPuzzles();
@@ -41,16 +37,17 @@ public class Levels {
                     return play(game);
                 }
 
-                // 🔁 Start traveling sound effect
+                SoundPlayer.stopLoop(); 
                 SoundPlayer.playLoop("travel_loop.wav");
 
                 game.chooseDirection(getLevelNumber());
 
-                // 🔇 Stop traveling sound effect once direction ends
                 SoundPlayer.stopLoop();
+
+                SoundPlayer.playLoop("obstacle_level" + getLevelNumber() + ".wav");
             }
 
-            // 🔔 Level complete sound
+            SoundPlayer.stopLoop();     
             SoundPlayer.playSound("level_complete.wav");
 
             System.out.println("\nYou successfully complete Level " + getLevelNumber() + "!");
