@@ -20,6 +20,8 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 
 ---
 
+<h1 align="center">🧙‍♂️ Character Descriptions</h1>
+
 <small>
 <table width="100%" style="border-collapse: collapse;" border="1">
   <tr style="background-color: #f0f0f0;">
