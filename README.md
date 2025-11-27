@@ -26,20 +26,26 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
     <th colspan="2">Draven Stoneforge (Bravestone Hero)</th>
   </tr>
   <tr>
-    <td>
-      <b>Role</b>: Powerhouse / Fighter<br>
-      <b>Strengths</b>:<br>
-      Very high Power<br>Immune to animal attacks once per level<br>Breaks physical barriers<br>
-      <b>Weaknesses</b>:<br>
-      VERY low Intelligence<br>Struggles with riddles, codes, logic puzzles<br>Takes double damage from mental traps<br>
-      <b>Special Ability</b>: <b>Titan Smash</b>: Breaks one obstacle without solving puzzle (once per level)<br>
-      <b>Stats</b>: Power: ⭐⭐⭐⭐⭐ | Intelligence: ⭐ | Agility: ⭐⭐⭐ | Survival: ⭐⭐⭐⭐ | Lives: 3
+    <td style="vertical-align: top; padding: 10px;">
+      <b>Role:</b> Powerhouse / Fighter<br><br>
+      <b>Strengths:</b><br>
+      - Very high Power<br>
+      - Immune to animal attacks once per level<br>
+      - Breaks physical barriers<br><br>
+      <b>Weaknesses:</b><br>
+      - VERY low Intelligence<br>
+      - Struggles with riddles, codes, logic puzzles<br>
+      - Takes double damage from mental traps<br><br>
+      <b>Special Ability:</b> <b>Titan Smash</b>: Breaks one obstacle without solving puzzle (once per level)<br><br>
+      <b>Stats:</b> Power: ⭐⭐⭐⭐⭐ | Intelligence: ⭐ | Agility: ⭐⭐⭐ | Survival: ⭐⭐⭐⭐ | Lives: 3
     </td>
-    <td align="center" rowspan="5">
-      <img src="images/1.png" alt="Draven Stoneforge" width="180">
+    <td style="width: 180px; text-align: center; vertical-align: top; padding: 10px;">
+      <img src="images/1.png" alt="Draven Stoneforge" width="160">
     </td>
   </tr>
 </table>
+</small>
+
 
 <br>
 
