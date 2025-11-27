@@ -35,11 +35,11 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
   </tr>
   <tr>
     <td><b>Strengths</b></td>
-    <td>Very high Power<br>Immune to animal attacks once per level<br>Breaks physical barriers</td>
+    <td>- Very high Power<br>- Immune to animal attacks once per level<br>- Breaks physical barriers</td>
   </tr>
   <tr>
     <td><b>Weaknesses</b></td>
-    <td>VERY low Intelligence<br>Struggles with riddles, codes, logic puzzles<br>Takes double damage from mental traps</td>
+    <td>- Very low Intelligence<br>- Struggles with riddles, codes, logic puzzles<br>- Takes double damage from mental traps</td>
   </tr>
   <tr>
     <td><b>Special Ability</b></td>
