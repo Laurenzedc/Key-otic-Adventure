@@ -30,7 +30,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
     <td><b>Role</b></td>
     <td>Powerhouse / Fighter</td>
     <td rowspan="5" align="center">
-      <img src="images/selene.png" alt="Draven Stoneforge" width="180">
+      <img src="images/selene.png" alt="Draven Stoneforge">
     </td>
   </tr>
   <tr>
