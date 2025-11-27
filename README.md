@@ -19,14 +19,19 @@ Each level contains:
 Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—your only way home.
 
 ---
-
 <h1 align="center">🧙‍♂️ Character Descriptions</h1>
+
+<p align="center">
+  <img src="images/2.png">
+</p>
+
+
 
 <small>
 <table width="100%" style="border-collapse: collapse;" border="1">
   <tr style="background-color: #f0f0f0;">
     <th colspan="2">Draven Stoneforge (Bravestone Hero)</th>
-    <th>Image</th>
+    <th>Character</th>
   </tr>
   <tr>
     <td><b>Role</b></td>
@@ -58,7 +63,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 <table width="100%" style="border-collapse: collapse;" border="1">
   <tr style="background-color: #f0f0f0;">
     <th colspan="2">Selene Quickstep (Agility Specialist)</th>
-    <th>Image</th>
+    <th>Character</th>
   </tr>
   <tr>
     <td><b>Role</b></td>
@@ -90,7 +95,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 <table width="100%" style="border-collapse: collapse;" border="1">
   <tr style="background-color: #f0f0f0;">
     <th colspan="2">Orion Mindweaver (Puzzle Master)</th>
-    <th>Image</th>
+    <th>Character</th>
   </tr>
   <tr>
     <td><b>Role</b></td>
@@ -122,7 +127,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 <table width="100%" style="border-collapse: collapse;" border="1">
   <tr style="background-color: #f0f0f0;">
     <th colspan="2">Kaya Wildroot (Tracker / Survivalist)</th>
-    <th>Image</th>
+    <th>Character</th>
   </tr>
   <tr>
     <td><b>Role</b></td>
