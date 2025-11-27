@@ -7,7 +7,10 @@ Key-otic Adventure is a story-driven Java console game inspired by escape rooms 
 
 This project demonstrates Object-Oriented Programming (OOP) concepts, modular class structure, puzzle and level logic, and randomization.
 
+<p align="center">
 ### Character Showcase
+</p>
+
 ![Characters](images/2.png)
 
 
