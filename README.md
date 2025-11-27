@@ -188,6 +188,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 ```bash
 javac Main.java
 
+```
 
 ## 📚 Other Sections
 
