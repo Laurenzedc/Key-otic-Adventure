@@ -25,7 +25,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 </h1>
 
 <p align="center">
-  <img src="images/2.png" width="600">
+  <img src="images/2.png">
 </p>
 
 ---
