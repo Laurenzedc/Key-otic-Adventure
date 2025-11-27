@@ -6,7 +6,7 @@
 
 ---
 
-## 🌍 **Overview**
+## **Overview**
 **Key-otic Adventure** is a story-driven Java console game inspired by escape rooms and Jumanji-style game worlds.  
 You play as a trapped adventurer who must complete five levels, solve puzzles, choose paths, and switch between unique characters to survive.
 
