@@ -13,7 +13,7 @@ You play as a trapped adventurer who must complete five levels, solve puzzles, c
 Each level contains:
 - 🧩 **Puzzles**
 - 🧭 **Directional choices**
-- 🔑 **Keys to collect**
+- 🔑 **Items to collect**
 - 📜 **Multiple outcomes**
 
 Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—your only way home.
