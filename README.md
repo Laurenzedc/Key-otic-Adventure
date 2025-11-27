@@ -20,34 +20,25 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 
 ---
 
-<h1 align="center">
-  <font color="#ff6600">✨ Character Showcase ✨</font>
-</h1>
-
-<p align="center">
-  <img src="images/2.png">
-</p>
-<h1 align="center">🧙‍♂️ Character Descriptions</h1>
-
 <small>
-<table>
+<table width="100%" style="table-layout: fixed; border-collapse: collapse;" border="1">
   <thead>
-    <tr>
-      <th>Character</th>
-      <th>Role</th>
-      <th>Strengths</th>
-      <th>Weaknesses</th>
-      <th>Special Ability</th>
-      <th>Power</th>
-      <th>Intelligence</th>
-      <th>Agility</th>
-      <th>Survival</th>
-      <th>Lives</th>
+    <tr style="background-color: #f0f0f0;">
+      <th width="12%">Character</th>
+      <th width="12%">Role</th>
+      <th width="25%">Strengths</th>
+      <th width="25%">Weaknesses</th>
+      <th width="15%">Special Ability</th>
+      <th width="5%">Power</th>
+      <th width="5%">Intelligence</th>
+      <th width="5%">Agility</th>
+      <th width="5%">Survival</th>
+      <th width="5%">Lives</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><b>Draven Stoneforge</b><br>(The Bravestone-Inspired Hero)</td>
+      <td><b>Draven Stoneforge</b><br>(Bravestone Hero)</td>
       <td>Powerhouse / Fighter</td>
       <td>Very high Power<br>Immune to animal attacks once per level<br>Breaks physical barriers</td>
       <td>VERY low Intelligence<br>Struggles with riddles, codes, logic puzzles<br>Takes double damage from mental traps</td>
@@ -97,6 +88,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
   </tbody>
 </table>
 </small>
+
 
 
 ---
