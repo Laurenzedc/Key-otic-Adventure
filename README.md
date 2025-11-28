@@ -219,23 +219,6 @@ javac Main.java
 
 ---
 
-## 📚 Other Sections
-
-### **a. Future Enhancements**
-- Add saving/loading system  
-- Add GUI version (JavaFX)  
-- Improve AI behavior for enemies  
-- Add more puzzle types (logic grid, sequence decoding)  
-- Add achievements and secret endings  
-
-### **b. References**
-- Oracle Java Documentation  
-- StackOverflow community discussions  
-- W3Schools Java tutorials  
-- GeeksForGeeks OOP resources  
-
----
-
 ## ✨ Acknowledgment
 
 We sincerely express our gratitude to our instructor for the guidance, support, and insights shared throughout this project.  
@@ -251,4 +234,23 @@ This project reflects a collaborative effort, and we appreciate everyone who pla
 
 This project was developed for academic purposes under **CS 211 — Object-Oriented Programming**.  
 It is intended only as a reference. Please avoid copying or submitting it as your own work.
+
+---
+
+## 📚 Other Sections
+
+### **a. Future Enhancements**
+- Add saving/loading system  
+- Add GUI version (JavaFX)  
+- Improve AI behavior for enemies  
+- Add more puzzle types (logic grid, sequence decoding)  
+- Add achievements and secret endings  
+
+### **b. References**
+- Oracle Java Documentation  
+- StackOverflow community discussions  
+- W3Schools Java tutorials  
+- GeeksForGeeks OOP resources  
+
+
 
