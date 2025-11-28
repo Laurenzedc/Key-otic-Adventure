@@ -18,6 +18,8 @@ Each level contains:
 
 Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—your only way home.
 
+---
+
 ## 🗃️ **Project Structure**
 
 ```bash
