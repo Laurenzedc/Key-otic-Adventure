@@ -20,7 +20,7 @@ Each level contains:
 
 ```bash
 📁 src/
-└── 🎮 KEY-OTIC-ADVENTURE/
+└── 📁 KEY-OTIC-ADVENTURE/
     ├── 📄 Main.java
     ├── 🕹️ Game.java
     ├── 🧍 Characters.java
