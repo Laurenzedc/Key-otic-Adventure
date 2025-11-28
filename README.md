@@ -17,18 +17,17 @@ Each level contains:
 - 📜 **Multiple outcomes**
 
 ## 🗃️ **Project Structure**
-## 🗃️ **Project Structure**
 
 ```bash
-src/
-├── Main.java
-├── Game.java
-├── Characters.java
-├── Items.java
-├── DialogueLibrary.java
-├── Levels.java
-├── Puzzles.java
-└── SoundPlayer.java
+📁 src/
+├── 📄 Main.java
+├── 🕹️ Game.java
+├── 🧍 Characters.java
+├── 🎒 Items.java
+├── 💬 DialogueLibrary.java
+├── 🗺️ Levels.java
+├── 🧩 Puzzles.java
+└── 🔊 SoundPlayer.java
 ```
 
 Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—your only way home.
