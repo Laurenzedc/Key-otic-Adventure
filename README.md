@@ -31,8 +31,15 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
     ├── 🗺️ Levels.java
     ├── 🧩 Puzzles.java
     └── 🔊 SoundPlayer.java
-
 ```
+- **`Main.java`** — Launches the game.
+- **`Game.java`** — Manages the main gameplay loop, puzzles, and progression.
+- **`Characters.java`** — Defines character roles, abilities, and stats.
+- **`Items.java`** — Manages item storage and utility functions.
+- **`DialogueLibrary.java`** — Generates unique character reactions.
+- **`Levels.java`** — Contains all level classes extending `LevelBase`.
+- **`Puzzles.java`** — Holds all puzzle definitions and mechanics.
+- **`SoundPlayer.java`** — Handles music and sound playback.
 
 ---
 <h1 align="center">🧙‍♂️ Character Descriptions</h1>
