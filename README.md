@@ -232,3 +232,19 @@ javac Main.java
 - W3Schools Java tutorials  
 - GeeksForGeeks OOP resources  
 
+## ✨ Acknowledgment
+
+We sincerely express our gratitude to our instructor for the guidance, support, and insights shared throughout this project.  
+Their expertise greatly helped deepen our understanding of Object-Oriented Programming.
+
+We also thank our classmates and peers for their cooperation, feedback, and encouragement, which contributed to improving the overall quality of this work.
+
+This project reflects a collaborative effort, and we appreciate everyone who played a part in its completion.
+
+---
+
+## ⚠️ Disclaimer
+
+This project was developed for academic purposes under **CS 211 — Object-Oriented Programming**.  
+It is intended only as a reference. Please avoid copying or submitting it as your own work.
+
