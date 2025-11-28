@@ -217,6 +217,8 @@ javac Main.java
 
 ```
 
+---
+
 ## 📚 Other Sections
 
 ### **a. Future Enhancements**
@@ -231,6 +233,8 @@ javac Main.java
 - StackOverflow community discussions  
 - W3Schools Java tutorials  
 - GeeksForGeeks OOP resources  
+
+---
 
 ## ✨ Acknowledgment
 
