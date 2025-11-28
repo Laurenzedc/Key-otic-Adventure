@@ -20,14 +20,16 @@ Each level contains:
 
 ```bash
 📁 src/
-├── 📄 Main.java
-├── 🕹️ Game.java
-├── 🧍 Characters.java
-├── 🎒 Items.java
-├── 💬 DialogueLibrary.java
-├── 🗺️ Levels.java
-├── 🧩 Puzzles.java
-└── 🔊 SoundPlayer.java
+└── 🎮 KEY-OTIC-ADVENTURE/
+    ├── 📄 Main.java
+    ├── 🕹️ Game.java
+    ├── 🧍 Characters.java
+    ├── 🎒 Items.java
+    ├── 💬 DialogueLibrary.java
+    ├── 🗺️ Levels.java
+    ├── 🧩 Puzzles.java
+    └── 🔊 SoundPlayer.java
+
 ```
 
 Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—your only way home.
