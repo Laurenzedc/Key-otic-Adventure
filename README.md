@@ -16,6 +16,17 @@ Each level contains:
 - 🔑 **Items to collect**
 - 📜 **Multiple outcomes**
 
+## 🗃️ **Project Structure**
+ src/
+│── Main.java              
+│── Game.java              
+│── Characters.java        
+│── Items.java             
+│── DialogueLibrary.java   
+│── Levels.java            
+│── Puzzles.java           
+└── SoundPlayer.java       
+
 Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—your only way home.
 
 ---
@@ -163,12 +174,15 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 ## 🧱 **OOP Concepts Applied**
 
 ### 🔒 **1. Encapsulation**
-- Private data such as HP, inventory, and stats.
-- Controlled access via getters/setters (`getHP()`, `addItem()`, etc.).
+- Character stats (`power`, `intelligence`, `lives`, etc.) are private.
+- Inventory and item storage use encapsulated data.
+- Puzzle answers and internal logic remain protected.
+- Access is through getters and controlled methods.
 
 ### 🎭 **2. Polymorphism**
-- Characters override methods for unique interactions.
-- Puzzle responses and abilities differ per character.
+- Characters respond differently to puzzles using overridden dialogue.
+- Each character's ability changes puzzle outcomes.
+- Puzzles accept different valid outcomes depending on the character/item used.
 
 ### 🧩 **3. Abstraction**
 - `Puzzle.java` → Handles puzzle logic  
@@ -177,8 +191,9 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 - `Game` only interacts with exposed methods.
 
 ### 🧬 **4. Inheritance**
-- Character classes inherit from a base template.
-- Easily extendable for future characters or abilities.
+- All levels inherit from `LevelBase`.
+- Puzzle types share structure in the `Puzzle` class.
+- Potential extension for future enemy or boss subclasses.
 
 ---
 
