@@ -16,6 +16,8 @@ Each level contains:
 - 🔑 **Items to collect**
 - 📜 **Multiple outcomes**
 
+Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—your only way home.
+
 ## 🗃️ **Project Structure**
 
 ```bash
@@ -31,8 +33,6 @@ Each level contains:
     └── 🔊 SoundPlayer.java
 
 ```
-
-Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—your only way home.
 
 ---
 <h1 align="center">🧙‍♂️ Character Descriptions</h1>
