@@ -188,9 +188,6 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 </small>
 
 
-
-Parent Class	Child Classes	Benefit
-Levels.LevelBase (abstract)	Levels.Level1, Levels.Level2, etc.	Shared play(Game game) logic ensures consistent flow across all levels.
 ---
 
 ## 𖤐 **OOP Concepts Applied**
