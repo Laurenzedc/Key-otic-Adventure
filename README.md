@@ -23,8 +23,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 ## ✎ **Project Structure**
 
 ```bash
-📁 src/
-└──📁 KEY-OTIC ADVENTURE/CODES
+📁 KEY-OTIC ADVENTURE/CODES
     ├── 📁 sounds/
     ├── 📁 images/
     ├── 🧍 Characters.java
