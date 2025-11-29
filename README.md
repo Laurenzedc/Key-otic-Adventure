@@ -24,24 +24,28 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 
 ```bash
 📁 src/
-└── 📁 KEY-OTIC-ADVENTURE/
-    ├── 📄 Main.java
-    ├── 🕹️ Game.java
+└──📁 KEY-OTIC ADVENTURE/CODES
+    ├── 📁 sounds/
+    ├── 📁 images/
     ├── 🧍 Characters.java
-    ├── 🎒 Items.java
     ├── 💬 DialogueLibrary.java
+    ├── 🕹️ Game.java
+    ├── 🎒 Items.java
     ├── 🗺️ Levels.java
+    ├── 📄 Main.java
     ├── 🧩 Puzzles.java
     └── 🔊 SoundPlayer.java
 ```
-- **`Main.java`** — Launches the game.
-- **`Game.java`** — Manages the main gameplay loop, puzzles, and progression.
-- **`Characters.java`** — Defines character roles, abilities, and stats.
-- **`Items.java`** — Manages item storage and utility functions.
-- **`DialogueLibrary.java`** — Generates unique character reactions.
-- **`Levels.java`** — Contains all level classes extending `LevelBase`.
-- **`Puzzles.java`** — Holds all puzzle definitions and mechanics.
-- **`SoundPlayer.java`** — Handles music and sound playback.
+- **Main.java** — Launches the game.  
+- **Game.java** — Manages the main gameplay loop, puzzles, and progression.  
+- **Characters.java** — Defines character roles, abilities, and stats.  
+- **Items.java** — Manages item storage and utility functions.  
+- **DialogueLibrary.java** — Generates unique character reactions.  
+- **Levels.java** — Contains all level classes extending `LevelBase`.  
+- **Puzzles.java** — Holds all puzzle definitions and mechanics.  
+- **SoundPlayer.java** — Handles music and sound playback.  
+- **sounds/** — Contains sound effects used in the game.  
+- **images/** — Contains images used in the README.
 
 ---
 <h1 align="center">「 ✦ How to Play ✦ 」 </h1>
