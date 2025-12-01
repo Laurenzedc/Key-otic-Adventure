@@ -17,7 +17,6 @@ Each level contains:
 - 📜 **Multiple outcomes**
 
 Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—your only way home.
-
 ---
 
 ## ✎ **Project Structure**
@@ -40,35 +39,19 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 ```
 ### 📁 Project File Descriptions
 
-**Main.java**  
-• 🚀 Launches the game.
+| File | Description |
+|------|-------------|
+| **Main.java** | 🚀 Launches the game. |
+| **Game.java** | 🎮 Controls gameplay loop, puzzle flow, and progression. |
+| **Characters.java** | 🧍 Defines character roles and abilities. |
+| **Items.java** | 🎒 Manages item storage and inventory logic. |
+| **DialogueLibrary.java** | 💬 Provides character dialogues and reactions. |
+| **Levels.java** | 🌍 Contains all level classes extending `LevelBase`. |
+| **Puzzles.java** | 🧩 Defines puzzles, sequences, and mechanics. |
+| **SoundPlayer.java** | 🔊 Manages sound playback. |
+| **sounds/** | 🎵 Contains game audio files. |
+| **images/** | 🖼️ Contains README image assets. |
 
-**Game.java**  
-• 🎮 Controls gameplay loop, puzzle flow, and overall progression.
-
-**Characters.java**  
-• 🧍 Defines character roles, stats, and special abilities.
-
-**Items.java**  
-• 🎒 Handles item storage, usage, and inventory logic.
-
-**DialogueLibrary.java**  
-• 💬 Provides character dialogues and dynamic reactions.
-
-**Levels.java**  
-• 🌍 Contains all level classes extending `LevelBase`.
-
-**Puzzles.java**  
-• 🧩 Contains puzzle definitions, sequences, and mechanics.
-
-**SoundPlayer.java**  
-• 🔊 Manages sound effects and music playback.
-
-**sounds/**  
-• 🎵 Contains audio files used in the game.
-
-**images/**  
-• 🖼️ Contains image assets used in the README.
 
 
 
