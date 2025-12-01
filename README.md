@@ -23,28 +23,54 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 ## ✎ **Project Structure**
 
 ```bash
-📁 KEY-OTIC ADVENTURE/CODES
-    ├── 📁 sounds/
-    ├── 📁 images/
-    ├── 🧍 Characters.java
-    ├── 💬 DialogueLibrary.java
-    ├── 🕹️ Game.java
-    ├── 🎒 Items.java
-    ├── 🗺️ Levels.java
-    ├── 📄 Main.java
-    ├── 🧩 Puzzles.java
-    └── 🔊 SoundPlayer.java
+📦 KEY-OTIC ADVENTURE  
+└── 📂 CODES  
+    ├── 📂 sounds  
+    │   └── 🎵 *sound files here*  
+    │
+    ├── 📄 Characters.java  
+    ├── 📄 DialogueLibrary.java  
+    ├── 📄 Game.java  
+    ├── 📄 InputHandler.java  
+    ├── 📄 Items.java  
+    ├── 📄 Levels.java  
+    ├── 📄 Main.java  
+    ├── 📄 Puzzles.java  
+    └── 📄 SoundPlayer.java
 ```
-- **Main.java** — Launches the game.  
-- **Game.java** — Manages the main gameplay loop, puzzles, and progression.  
-- **Characters.java** — Defines character roles, abilities, and stats.  
-- **Items.java** — Manages item storage and utility functions.  
-- **DialogueLibrary.java** — Generates unique character reactions.  
-- **Levels.java** — Contains all level classes extending `LevelBase`.  
-- **Puzzles.java** — Holds all puzzle definitions and mechanics.  
-- **SoundPlayer.java** — Handles music and sound playback.  
-- **sounds/** — Contains sound effects used in the game.  
-- **images/** — Contains images used in the README.
+### 📁 Project File Descriptions
+
+**Main.java**  
+• 🚀 Launches the game.
+
+**Game.java**  
+• 🎮 Controls gameplay loop, puzzle flow, and overall progression.
+
+**Characters.java**  
+• 🧍 Defines character roles, stats, and special abilities.
+
+**Items.java**  
+• 🎒 Handles item storage, usage, and inventory logic.
+
+**DialogueLibrary.java**  
+• 💬 Provides character dialogues and dynamic reactions.
+
+**Levels.java**  
+• 🌍 Contains all level classes extending `LevelBase`.
+
+**Puzzles.java**  
+• 🧩 Contains puzzle definitions, sequences, and mechanics.
+
+**SoundPlayer.java**  
+• 🔊 Manages sound effects and music playback.
+
+**sounds/**  
+• 🎵 Contains audio files used in the game.
+
+**images/**  
+• 🖼️ Contains image assets used in the README.
+
+
 
 ---
 <h1 align="center">「 ✦ How to Play ✦ 」 </h1>
