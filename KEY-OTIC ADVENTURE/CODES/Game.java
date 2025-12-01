@@ -2,11 +2,14 @@ import java.util.*;
 
 public class Game {
 
-    private final Scanner scanner;
+    private final InputHandler inputHandler;
     private final List<Characters.Character> heroes;
     private Characters.Character currentHero;
     private final Items.Inventory inventory;
     private final Random random;
+
+    // Animation speeds (ms)
+    private static final int TEXT_SPEED = 30;    // smooth main text
 
     // ============================================================
     // DIRECTION POOLS
@@ -62,7 +65,7 @@ public class Game {
     // ============================================================
 
     public Game() {
-        this.scanner = new Scanner(System.in);
+        this.inputHandler = new InputHandler();
         this.heroes = Characters.createDefaultCharacters();
         this.inventory = new Items.Inventory();
         this.random = new Random();
@@ -76,21 +79,252 @@ public class Game {
         return currentHero;
     }
 
+    // Small helper so other classes can trigger pauses without touching inputHandler
+    public void pause() {
+        inputHandler.waitForEnter();
+    }
+
     // ============================================================
-    // INTRO STORY 
+    // ANIMATION HELPERS
+    // ============================================================
+
+    private void sleep(int ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    /** Smooth typewriter text with flush to avoid buffered instant lines. */
+    public void animateText(String text, int delayMs) {
+        for (char c : text.toCharArray()) {
+            System.out.print(c);
+            System.out.flush();
+            sleep(delayMs);
+        }
+        System.out.println();
+    }
+
+    public void displayText(String text) {
+        animateText(text, TEXT_SPEED);
+    }
+
+    /**
+     * Clears the console so only the current scene is visible.
+     * In some IDEs this just pushes old text away.
+     */
+    public void clearConsole() {
+        try {
+            String os = System.getProperty("os.name").toLowerCase();
+            if (os.contains("win")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
+        } catch (Exception e) {
+            System.out.println("\n".repeat(80));
+        }
+    }
+
+    /** Small flash line (used for life loss and rewards). */
+    public void flashLine(String text, int flashes) {
+        for (int i = 0; i < flashes; i++) {
+            System.out.println(text);
+            sleep(140);
+        }
+    }
+
+    /** Animated level intro banner. */
+    public void showLevelIntroAnimation(int levelNumber) {
+        clearConsole();
+        String title = "LEVEL " + levelNumber;
+        String base = " " + title + " ";
+
+        for (int i = 1; i <= 3; i++) {
+            clearConsole();
+            String arrows = ">".repeat(i);
+            String trail = "<".repeat(i);
+            printCentered(arrows + base + trail);
+            sleep(160);
+        }
+
+        clearConsole();
+        printCentered("========== " + title + " ==========");
+        sleep(260);
+        System.out.println();
+        pause(); // pause before the level starts
+    }
+
+    /** Travel animation between puzzles / paths. */
+    public void showTravelAnimation() {
+        System.out.println();
+        displayText("Moving to the next path...");
+
+        String[] frames = {
+                "[=         ]",
+                "[===       ]",
+                "[=====     ]",
+                "[=======   ]",
+                "[========= ]",
+                "[==========]"
+        };
+
+        System.out.print("  ");
+        for (String f : frames) {
+            System.out.print("\r  " + f);
+            System.out.flush();
+            sleep(90);
+        }
+        System.out.println();
+        sleep(160);
+        pause(); // pause after travel
+    }
+
+    /** Little "opening" animation for inventory. */
+    public void showInventoryOpenAnimation() {
+        System.out.println();
+        displayText("Opening inventory...");
+
+        String[] frames = {
+                "[#     ]",
+                "[##    ]",
+                "[###   ]",
+                "[####  ]",
+                "[##### ]",
+                "[######]"
+        };
+
+        System.out.print("  ");
+        for (String f : frames) {
+            System.out.print("\r  " + f);
+            System.out.flush();
+            sleep(70);
+        }
+        System.out.println("\n");
+    }
+
+    /** Level-specific ambient animations (ASCII only). */
+    public void playLevelAmbientAnimation(int levelNumber) {
+        switch (levelNumber) {
+            case 1 -> jungleAmbient();
+            case 2 -> riverAmbient();
+            case 3 -> iceAmbient();
+            case 4 -> echoAmbient();
+            case 5 -> heartAmbient();
+        }
+    }
+
+    private void jungleAmbient() {
+        String[] frames = {
+                "[JUNGLE RUSTLES...]",
+                "[LEAVES SHIFT IN THE WIND...]",
+                "[SOMETHING WATCHES FROM THE TREES...]"
+        };
+        for (String f : frames) {
+            System.out.println(f);
+            sleep(180);
+        }
+        System.out.println();
+        pause();
+    }
+
+    private void riverAmbient() {
+        String[] frames = {
+                "[WATER FLOWS SOFTLY...]",
+                "[RIPPLES DISTORT YOUR REFLECTION...]",
+                "[THE CURRENT CHANGES DIRECTION...]"
+        };
+        for (String f : frames) {
+            System.out.println(f);
+            sleep(180);
+        }
+        System.out.println();
+        pause();
+    }
+
+    private void iceAmbient() {
+        String[] frames = {
+                "[COLD AIR SWIRLS AROUND YOU...]",
+                "[FROST CREEPS ALONG THE GROUND...]",
+                "[ICE CRACKS SOMEWHERE FAR AWAY...]"
+        };
+        for (String f : frames) {
+            System.out.println(f);
+            sleep(180);
+        }
+        System.out.println();
+        pause();
+    }
+
+    private void echoAmbient() {
+        String[] frames = {
+            "[A DISTANT ECHO ANSWERS YOUR BREATH...]",
+            "[ROCKS VIBRATE WITH HIDDEN SOUND...]",
+            "[EVERY STEP RETURNS AS A WHISPER...]"
+        };
+        for (String f : frames) {
+            System.out.println(f);
+            sleep(180);
+        }
+        System.out.println();
+        pause();
+    }
+
+    private void heartAmbient() {
+        String[] frames = {
+                "[THE AIR HUMS SOFTLY...]",
+                "[LIGHT PULSES FROM AN INVISIBLE SOURCE...]",
+                "[THE HEART OF THE GAME BEATS SLOWLY...]"
+        };
+        for (String f : frames) {
+            System.out.println(f);
+            sleep(180);
+        }
+        System.out.println();
+        pause();
+    }
+
+    // ============================================================
+    // INTRO STORY
     // ============================================================
 
     private void printIntroStory() {
-
+        clearConsole();
         System.out.println();
         printCentered("==========================================");
         printCentered("            KEY-OTIC ADVENTURE            ");
         printCentered("==========================================");
 
-        System.out.println("\nThe board unfolds before you — glowing symbols rising like fireflies.");
-        System.out.println("Drums echo from the depths of an unseen jungle…");
+        displayText("");
+        displayText("The board unfolds before you - glowing symbols rising like fireflies.");
+        displayText("Drums echo from the depths of an unseen jungle...");
         System.out.println();
-        printCentered("“SURVIVE MY TRIALS… AND CLAIM THE KEYS.”");
+        printCentered("\"SURVIVE MY TRIALS... AND CLAIM THE KEYS.\"");
+        pause(); // pause after intro story
+    }
+
+    // ============================================================
+    // RANDOM FLAVOR EVENTS
+    // ============================================================
+
+    public void randomEvent() {
+        int roll = random.nextInt(100);
+
+        if (roll < 20) {
+            displayText("A warm breeze swirls around you... a quiet presence seems to guide your steps.");
+            pause();
+        } else if (roll < 40) {
+            displayText("A cold shimmer ripples through the air... your breath fogs for a moment.");
+            pause();
+        } else if (roll < 60) {
+            displayText("You hear faint whispers... but when you turn, there is nothing.");
+            pause();
+        } else if (roll < 80) {
+            displayText("The ground pulses beneath your feet... as if the world reacts to your arrival.");
+            pause();
+        }
     }
 
     // ============================================================
@@ -98,32 +332,38 @@ public class Game {
     // ============================================================
 
     public void start() {
+        clearConsole();
         SoundPlayer.playLoop("intro_music.wav");
 
         printIntroStory();
 
-        System.out.print("\nDo you want to enter the game? (yes/no): ");
-        if (!readLine().trim().toLowerCase().startsWith("y")) {
-            System.out.println("\nYou step away from the mystical board...");
-            System.out.println("The drums fade into silence.");
-            SoundPlayer.stopLoop(); 
+        String choice = inputHandler.readValidOption(
+                "\nDo you want to enter the game? (yes/no):",
+                "yes", "no"
+        );
+
+        if (choice.equals("no")) {
+            clearConsole();
+            displayText("You step away from the mystical board...");
+            displayText("The drums fade into silence.");
+            SoundPlayer.stopLoop();
+            pause();
             return;
         }
 
         showMap();
-        System.out.print("\nPress ENTER to continue...");
-        readLine();
+        pause(); // after map
 
         SoundPlayer.stopLoop();
-
         SoundPlayer.playLoop("menu_music.wav");
 
-        System.out.println();
+        clearConsole();
         printCentered("==========================================");
-        printCentered("         CHOOSE YOUR CHARACTER          ");
+        printCentered("         CHOOSE YOUR CHARACTER            ");
         printCentered("==========================================");
 
         chooseInitialCharacter();
+        pause(); // pause after choosing character
 
         Levels.LevelBase[] levels = {
                 new Levels.Level1(),
@@ -133,13 +373,9 @@ public class Game {
                 new Levels.Level5()
         };
 
-        // ========================================================
-        // MAIN LEVEL LOOP (1–5)
-        // ========================================================
         for (int i = 0; i < levels.length; i++) {
 
             SoundPlayer.stopLoop();
-
             resetAllCharacterAbilities();
 
             if (!currentHero.isAlive()) {
@@ -147,14 +383,13 @@ public class Game {
                     gameOver();
                     return;
                 }
+                pause();
             }
 
             int levelNumber = i + 1;
 
-            System.out.println();
-            printCentered("==========================================");
-            printCentered("ENTERING LEVEL " + levelNumber);
-            printCentered("==========================================");
+            showLevelIntroAnimation(levelNumber);
+            randomEvent();
 
             boolean survived = levels[i].play(this);
 
@@ -166,12 +401,10 @@ public class Game {
             giveLevelReward(levelNumber);
 
             if (i < levels.length - 1) {
-
                 SoundPlayer.playLoop("menu_music.wav");
-
                 askToShowMap("choosing your next destination");
                 offerOptionalCharacterSwitch();
-
+                pause();
             } else {
                 printGameCompletion();
                 return;
@@ -184,31 +417,29 @@ public class Game {
     // ============================================================
 
     public void showMap() {
-        System.out.println();
+        clearConsole();
         printCentered("==========================================");
-        printCentered("           GAME MAP            ");
+        printCentered("                 GAME MAP                 ");
         printCentered("==========================================");
         System.out.println();
-        System.out.println("1. The Awakening Jungle: Where the forest itself seems alive—roots shift, creatures mimic patterns, and nature tests your instincts.\n");
-        System.out.println("2. The River of Trials: Currents twist unpredictably, reflections hide secrets, and choices flow like water—one wrong branch changes everything.\n");
-        System.out.println("3. The Frozen Cavern: A silent world of runes and mirrors—patterns freeze in time, and sound itself becomes a puzzle.\n");
+        System.out.println("1. The Awakening Jungle: Where the forest itself seems alive - roots shift, creatures mimic patterns, and nature tests your instincts.\n");
+        System.out.println("2. The River of Trials: Currents twist unpredictably, reflections hide secrets, and choices flow like water - one wrong branch changes everything.\n");
+        System.out.println("3. The Frozen Cavern: A silent world of runes and mirrors - patterns freeze in time, and sound itself becomes a puzzle.\n");
         System.out.println("4. The Ravine of Echoes: Every noise returns altered. Shadows deceive, vibrations guide, and timing becomes your only ally.\n");
-        System.out.println("5. The Heart of the Game: The final sanctuary where elements converge—logic, rhythm, and destiny merge into one last challenge.");
-        System.out.println();
+        System.out.println("5. The Heart of the Game: The final sanctuary where elements converge - logic, rhythm, and destiny merge into one last challenge.\n");
         printCentered("==========================================");
     }
 
     public void askToShowMap(String reason) {
-        System.out.print("\nDo you want to view the map before " + reason + "? (yes/no): ");
+        String mapChoice = inputHandler.readValidOption(
+                "\nDo you want to view the map before " + reason + "? (yes/no):",
+                "yes", "no"
+        );
 
-        String mapChoice;
-        while (true) {
-            mapChoice = readLine().trim().toLowerCase();
-            if (mapChoice.equals("yes") || mapChoice.equals("no")) break;
-            System.out.println("Invalid answer. Please type yes or no.");
+        if (mapChoice.equals("yes")) {
+            showMap();
+            pause();
         }
-
-        if (mapChoice.equals("yes")) showMap();
     }
 
     // ============================================================
@@ -216,27 +447,27 @@ public class Game {
     // ============================================================
 
     private void chooseInitialCharacter() {
+        clearConsole();
         System.out.println("\nAvailable Characters:\n");
 
         for (Characters.Character c : heroes)
             System.out.println(c + "\n");
 
         while (true) {
-            System.out.print("Enter number (1–4): ");
-            try {
-                int id = Integer.parseInt(readLine().trim());
-                Characters.Character chosen = heroes.stream()
-                        .filter(h -> h.getId() == id)
-                        .findFirst()
-                        .orElse(null);
+            int id = inputHandler.readIntRange("Enter number (1-4):", 1, 4);
 
-                if (chosen != null) {
-                    currentHero = chosen;
-                    printCentered("You are now playing as: " + chosen.getName());
-                    return;
-                }
+            Characters.Character chosen = heroes.stream()
+                    .filter(h -> h.getId() == id)
+                    .findFirst()
+                    .orElse(null);
 
-            } catch (Exception ignored) {}
+            if (chosen != null) {
+                currentHero = chosen;
+                clearConsole();
+                printCentered("You are now playing as: " + chosen.getName());
+                sleep(400);
+                return;
+            }
 
             System.out.println("Invalid choice.");
         }
@@ -245,51 +476,47 @@ public class Game {
     private boolean forceSwitchToAliveHero() {
         if (!hasAnyLivingCharacter()) return false;
 
-        System.out.println("\nChoose a new character to continue:");
+        clearConsole();
+        System.out.println("\nChoose a new character to continue:\n");
 
         while (true) {
             for (Characters.Character c : heroes)
                 if (c.isAlive()) System.out.println(c + "\n");
 
-            System.out.print("Enter character number: ");
-            try {
-                int id = Integer.parseInt(readLine().trim());
-                Characters.Character chosen = heroes.stream()
-                        .filter(h -> h.getId() == id)
-                        .findFirst()
-                        .orElse(null);
+            int id = inputHandler.readIntRange("Enter character number:", 1, 4);
 
-                if (chosen != null && chosen.isAlive()) {
-                    currentHero = chosen;
-                    printCentered("You now take on the role of: " + chosen.getName());
-                    return true;
-                }
+            Characters.Character chosen = heroes.stream()
+                    .filter(h -> h.getId() == id)
+                    .findFirst()
+                    .orElse(null);
 
-            } catch (Exception ignored) {}
+            if (chosen != null && chosen.isAlive()) {
+                currentHero = chosen;
+                clearConsole();
+                printCentered("You now take on the role of: " + chosen.getName());
+                sleep(400);
+                return true;
+            }
 
-            System.out.println("Invalid choice.");
+            System.out.println("Invalid choice (Character might be dead or ID does not exist).");
         }
     }
 
     private void offerOptionalCharacterSwitch() {
-        System.out.print("\nDo you want to switch characters before the next level? (yes/no): ");
-
-        String switchChoice;
-        while (true) {
-            switchChoice = readLine().trim().toLowerCase();
-            if (switchChoice.equals("yes") || switchChoice.equals("no")) break;
-            System.out.println("Invalid answer. Please type yes or no.");
-        }
+        String switchChoice = inputHandler.readValidOption(
+                "\nDo you want to switch characters before the next level? (yes/no):",
+                "yes", "no"
+        );
 
         if (switchChoice.equals("no")) return;
 
+        clearConsole();
         System.out.println("\nAvailable living characters:\n");
         for (Characters.Character c : heroes)
             if (c.isAlive()) System.out.println(c + "\n");
 
         while (true) {
-            System.out.print("Enter number or press ENTER to stay: ");
-            String ans = readLine();
+            String ans = inputHandler.readString("Enter number or press ENTER to stay:");
             if (ans.isBlank()) return;
 
             try {
@@ -301,10 +528,11 @@ public class Game {
 
                 if (hero != null && hero.isAlive()) {
                     currentHero = hero;
+                    clearConsole();
                     printCentered("You now take on the role of: " + hero.getName());
+                    sleep(400);
                     return;
                 }
-
             } catch (Exception ignored) {}
 
             System.out.println("Invalid choice.");
@@ -328,62 +556,68 @@ public class Game {
 
         if (inventory.isEmpty()) return null;
 
-        System.out.println("\nDo you want to use an item from your inventory? (yes/no)");
-
-        String choice;
-        while (true) {
-            choice = readLine().trim().toLowerCase();
-            if (choice.equals("yes") || choice.equals("no")) break;
-            System.out.println("Invalid answer. Please type yes or no.");
-        }
+        String choice = inputHandler.readValidOption(
+                "\nDo you want to use an item from your inventory? (yes/no)",
+                "yes", "no"
+        );
 
         if (choice.equals("no")) return null;
 
+        clearConsole();
+        showInventoryOpenAnimation();
         inventory.showInventory();
+        pause();
 
-        System.out.print("Type the name of the item you want to use: ");
-        String itemName = readLine().trim().toUpperCase();
+        String itemName = inputHandler.readString("Type the name of the item you want to use:")
+                .toUpperCase(Locale.ROOT);
 
         try {
             Items.Item item = Items.Item.valueOf(itemName);
 
             if (!inventory.hasItem(item)) {
-                System.out.println("You don't have that item.");
+                System.out.println("You do not have that item.");
+                pause();
                 return null;
             }
 
             if (!puzzle.isItemUseful(item)) {
-                System.out.println("\n❌ This item cannot help with this obstacle.\n");
+                System.out.println();
+                System.out.println("This item cannot help with this obstacle.");
+                System.out.println();
+                pause();
                 return null;
             }
 
-            System.out.println("\nYou activated: " + itemName + "!");
+            System.out.println();
+            System.out.println("You activated: " + itemName + "!");
 
             switch (item) {
                 case TORCH ->
-                        System.out.println("🔥 The torch flickers, revealing hidden shapes around you.");
+                        System.out.println("The torch flickers, revealing hidden shapes around you.");
                 case ROPE ->
-                        System.out.println("🪢 The rope tightens as you secure your footing.");
+                        System.out.println("The rope tightens as you secure your footing.");
                 case CRYSTAL_KEY ->
-                        System.out.println("🔷 The Crystal Key hums, reacting to the frozen air.");
+                        System.out.println("The Crystal Key hums, reacting to the frozen air.");
                 case ECHO_WHISTLE ->
-                        System.out.println("📣 A sharp tone echoes, uncovering hidden vibrations.");
+                        System.out.println("A sharp tone echoes, uncovering hidden vibrations.");
                 case TOTEM_FLOW ->
-                        System.out.println("🌊 The totem glows, helping your thoughts flow smoothly.");
+                        System.out.println("The totem glows, helping your thoughts flow smoothly.");
                 case TOTEM_WISDOM ->
-                        System.out.println("📘 Ancient wisdom fills your mind.");
+                        System.out.println("Ancient wisdom fills your mind.");
                 case TOTEM_BRAVERY ->
-                        System.out.println("🛡️ Courage surges through your spirit.");
+                        System.out.println("Courage surges through your spirit.");
                 case TOTEM_SURVIVAL ->
-                        System.out.println("🌿 Nature guides your senses.");
+                        System.out.println("Nature guides your senses.");
                 case HEART_OF_GAME_SIGIL ->
-                        System.out.println("The sigil pulses, but nothing happens…");
+                        System.out.println("The sigil pulses, but nothing happens...");
             }
 
+            pause();
             return item;
 
         } catch (Exception e) {
             System.out.println("Invalid item.");
+            pause();
             return null;
         }
     }
@@ -396,45 +630,45 @@ public class Game {
 
         if (item == null) return baseDamage;
 
-        String txt = puzzle.getIntro().toLowerCase();
+        String txt = puzzle.getIntro().toLowerCase(Locale.ROOT);
         Puzzles.PuzzleKind kind = puzzle.getKind();
 
         if (item == Items.Item.TORCH &&
                 (txt.contains("dark") || txt.contains("frozen"))) {
-            System.out.println("🔥 TORCH reduces the danger.");
+            System.out.println("TORCH reduces the danger.");
             return Math.max(0, baseDamage - 1);
         }
 
         if (item == Items.Item.ROPE &&
                 (txt.contains("climb") || txt.contains("gap"))) {
-            System.out.println("🪢 ROPE helps you avoid the worst.");
+            System.out.println("ROPE helps you avoid the worst.");
             return Math.max(0, baseDamage - 1);
         }
 
         if (item == Items.Item.CRYSTAL_KEY && txt.contains("ice")) {
-            System.out.println("🔷 CRYSTAL KEY absorbs the cold impact.");
+            System.out.println("CRYSTAL KEY absorbs the cold impact.");
             return Math.max(0, baseDamage - 1);
         }
 
         if (item == Items.Item.ECHO_WHISTLE && txt.contains("echo")) {
-            System.out.println("📣 ECHO WHISTLE stabilizes the vibrations.");
+            System.out.println("ECHO WHISTLE stabilizes the vibrations.");
             return Math.max(0, baseDamage - 1);
         }
 
         if (item == Items.Item.TOTEM_BRAVERY &&
                 (kind == Puzzles.PuzzleKind.TIMING || kind == Puzzles.PuzzleKind.ENVIRONMENT)) {
-            System.out.println("🛡️ TOTEM OF BRAVERY shields you!");
+            System.out.println("TOTEM OF BRAVERY shields you.");
             return Math.max(0, baseDamage - 1);
         }
 
         if (item == Items.Item.TOTEM_WISDOM &&
                 (kind == Puzzles.PuzzleKind.RIDDLE || kind == Puzzles.PuzzleKind.CIPHER)) {
-            System.out.println("📘 TOTEM OF WISDOM softens the mistake.");
+            System.out.println("TOTEM OF WISDOM softens the mistake.");
             return Math.max(0, baseDamage - 1);
         }
 
         if (item == Items.Item.TOTEM_FLOW && kind == Puzzles.PuzzleKind.DECISION) {
-            System.out.println("🌊 TOTEM OF FLOW stabilizes the currents.");
+            System.out.println("TOTEM OF FLOW stabilizes the currents.");
             return Math.max(0, baseDamage - 1);
         }
 
@@ -442,7 +676,7 @@ public class Game {
                 (txt.contains("forest") || txt.contains("nature") ||
                         txt.contains("wild") || txt.contains("jungle") ||
                         txt.contains("roots"))) {
-            System.out.println("🌿 TOTEM OF SURVIVAL protects you!");
+            System.out.println("TOTEM OF SURVIVAL protects you.");
             return Math.max(0, baseDamage - 1);
         }
 
@@ -455,24 +689,31 @@ public class Game {
 
     public void loseLives(int amount, Puzzles.Puzzle puzzle) {
         currentHero.loseLives(amount);
-    
+
         if (currentHero.isAlive()) {
             SoundPlayer.playSound("life_lost.wav");
-            System.out.println("\nYou lost " + amount + " life!");
-            return; 
+            System.out.println();
+            System.out.println("You lost " + amount + " life!");
+            flashLine("*** LIFE -" + amount + " ***", 1);
+            pause();
+            return;
         }
-    
+
         SoundPlayer.playSound("character_dead.wav");
-        System.out.println("\nYou lost " + amount + " life!");
+        System.out.println();
+        System.out.println("You lost " + amount + " life!");
         System.out.println(currentHero.getName() + " has fallen!");
-    
+        flashLine("*** " + currentHero.getName().toUpperCase(Locale.ROOT) + " DOWN ***", 1);
+
         if (!hasAnyLivingCharacter()) {
             printCentered("NO CHARACTERS LEFT.");
-            return; 
+            pause();
+            return;
         }
-    
+
         forceSwitchToAliveHero();
-    }    
+        pause();
+    }
 
     public boolean hasAnyLivingCharacter() {
         return heroes.stream().anyMatch(Characters.Character::isAlive);
@@ -483,6 +724,8 @@ public class Game {
     // ============================================================
 
     public void chooseDirection(int level) {
+        clearConsole();
+
         List<String> pool = switch (level) {
             case 1 -> dirPoolLvl1;
             case 2 -> dirPoolLvl2;
@@ -493,7 +736,8 @@ public class Game {
         };
 
         if (pool.isEmpty()) {
-            System.out.println("\nThe paths fall silent.\n");
+            displayText("The paths fall silent.");
+            pause();
             return;
         }
 
@@ -505,33 +749,32 @@ public class Game {
             options.add(tempPool.remove(random.nextInt(tempPool.size())));
         }
 
-        System.out.println("\nAncient paths unfold:");
+        displayText("");
+        displayText("Ancient paths unfold:");
         char label = 'a';
+        List<String> validLabels = new ArrayList<>();
+
         for (String opt : options) {
             System.out.println("  " + label + ") " + opt);
+            validLabels.add(String.valueOf(label));
             label++;
         }
 
-        String chosenPath;
+        String[] validArray = validLabels.toArray(new String[0]);
+        String input = inputHandler.readValidOption(
+                "Choose (" + validLabels.get(0) + "-" + validLabels.get(validLabels.size() - 1) + "):",
+                validArray
+        );
 
-        while (true) {
-            System.out.print("Choose (a-" + (char) ('a' + optionsCount - 1) + "): ");
-            String input = readLine().trim().toLowerCase();
-
-            if (input.length() == 1) {
-                int idx = input.charAt(0) - 'a';
-                if (idx >= 0 && idx < optionsCount) {
-                    chosenPath = options.get(idx);
-                    break;
-                }
-            }
-
-            System.out.println("Invalid choice.\n");
-        }
+        int idx = input.charAt(0) - 'a';
+        String chosenPath = options.get(idx);
 
         pool.remove(chosenPath);
-        System.out.println("\nYou walk toward " + chosenPath + ".\n");
+
+        clearConsole();
+        displayText("You walk toward " + chosenPath + ".");
         heroDialogue("direction", null);
+        pause();
     }
 
     // ============================================================
@@ -553,20 +796,20 @@ public class Game {
 
         inventory.addItemSilent(reward);
 
+        clearConsole();
         SoundPlayer.playSound("item_received.wav");
 
-        System.out.println();
         printCentered("==========================================");
-        printCentered("LEVEL " + levelNumber + " REWARD");
+        printCentered("             LEVEL " + levelNumber + " REWARD");
         printCentered("==========================================");
 
         String displayName = formatItemName(reward);
-        printCentered(displayName + " ACQUIRED!");
+        flashLine(">> " + displayName + " ACQUIRED! <<", 2);
         System.out.println();
         printItemDescription(reward);
         System.out.println();
         printCentered("==========================================");
-        System.out.println();
+        pause();
     }
 
     private void printItemDescription(Items.Item item) {
@@ -577,19 +820,20 @@ public class Game {
             case TOTEM_FLOW -> "Improves decisions in water or current-based puzzles.";
             case CRYSTAL_KEY -> "Unlocks and stabilizes ice-related mechanisms.";
             case TOTEM_WISDOM -> "Sharpens your mind for riddles and cipher puzzles.";
-            case ECHO_WHISTLE -> "Reveals differences in echoes — useful for ravine puzzles.";
+            case ECHO_WHISTLE -> "Reveals differences in echoes - useful for ravine puzzles.";
             case TOTEM_BRAVERY -> "Reduces damage from environmental and timing traps.";
-            case HEART_OF_GAME_SIGIL -> "The final artifact — essence of the Key-otic Heart.";
+            case HEART_OF_GAME_SIGIL -> "The final artifact - essence of the Key-otic Heart.";
         };
 
         printCentered(desc);
     }
 
     private String formatItemName(Items.Item item) {
-        String name = item.name().replace('_', ' ').toLowerCase();
+        String name = item.name().replace('_', ' ').toLowerCase(Locale.ROOT);
         StringBuilder sb = new StringBuilder();
-        for (String p : name.split(" "))
+        for (String p : name.split(" ")) {
             sb.append(Character.toUpperCase(p.charAt(0))).append(p.substring(1)).append(" ");
+        }
         return sb.toString().trim();
     }
 
@@ -606,7 +850,8 @@ public class Game {
                 "You push forward with focus."
         );
 
-        System.out.println(reactions.get(random.nextInt(reactions.size())) + "\n");
+        displayText(reactions.get(random.nextInt(reactions.size())));
+        System.out.println();
     }
 
     public void heroDialogue(String situation, Puzzles.Puzzle puzzle) {
@@ -614,7 +859,9 @@ public class Game {
         String line = DialogueLibrary.getDialogue(hero, situation);
 
         if (line != null && !line.isEmpty()) {
-            System.out.println("\n" + line + "\n");
+            displayText("");
+            displayText(line);
+            displayText("");
         }
     }
 
@@ -623,46 +870,34 @@ public class Game {
     // ============================================================
 
     private void printGameCompletion() {
-
+        clearConsole();
         SoundPlayer.stopLoop();
-    
         SoundPlayer.playSound("win_game.wav");
-    
-        try {
-            Thread.sleep(3000); 
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-    
+
         System.out.println();
         printCentered("=========================================");
         printCentered("         YOU HAVE FINISHED THE GAME       ");
         printCentered("=========================================\n");
-    
-        System.out.println("The board folds into darkness...");
-        System.out.println("But a glow remains within the Heart of the Game.");
+
+        displayText("The board folds into darkness...");
+        displayText("But a glow remains within the Heart of the Game.");
         System.out.println();
+        pause();
     }
-    
+
     private void gameOver() {
+        clearConsole();
         SoundPlayer.stopLoop();
-    
         SoundPlayer.playSound("lose_game.wav");
-    
-        try {
-            Thread.sleep(3000); 
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-    
+
         printCentered("=========================================");
         printCentered("                GAME OVER                ");
         printCentered("=========================================\n");
-        System.out.println("The board seals shut.");
-        System.out.println("Your journey ends here, forever trap in this game.");
+        displayText("The board seals shut.");
+        displayText("Your journey ends here, forever trapped in this game.");
         System.out.println();
+        pause();
     }
-    
 
     // ============================================================
     // UTILITY
@@ -674,9 +909,9 @@ public class Game {
         System.out.println(" ".repeat(Math.max(0, pad)) + text);
     }
 
+    // Used by Puzzles
     public String readLine() {
-        try { return scanner.nextLine(); }
-        catch (Exception e) { return ""; }
+        return inputHandler.readString("");
     }
 
     public static void printBoxedCentered(String title, Set<Items.Item> items) {
@@ -685,41 +920,41 @@ public class Game {
         int boxWidth = 60;
         int leftPad = (width - boxWidth) / 2;
 
-        String border = "┌" + "─".repeat(boxWidth - 2) + "┐";
-        String middle = "├" + "─".repeat(boxWidth - 2) + "┤";
-        String bottom = "└" + "─".repeat(boxWidth - 2) + "┘";
+        String borderTop = "+" + "-".repeat(boxWidth - 2) + "+";
+        String borderMid = "+" + "-".repeat(boxWidth - 2) + "+";
+        String borderBottom = "+" + "-".repeat(boxWidth - 2) + "+";
 
         System.out.println();
-        System.out.println(" ".repeat(leftPad) + border);
+        System.out.println(" ".repeat(leftPad) + borderTop);
 
         String lineTitle = " " + title + " ";
         int pad = (boxWidth - 2 - lineTitle.length()) / 2;
 
-        System.out.println(" ".repeat(leftPad) + "│" +
+        System.out.println(" ".repeat(leftPad) + "|" +
                 " ".repeat(pad) + lineTitle +
                 " ".repeat(boxWidth - 2 - pad - lineTitle.length()) +
-                "│");
+                "|");
 
-        System.out.println(" ".repeat(leftPad) + middle);
+        System.out.println(" ".repeat(leftPad) + borderMid);
 
         if (items.isEmpty()) {
             String msg = "You have no items yet.";
             int pad2 = (boxWidth - 2 - msg.length()) / 2;
-            System.out.println(" ".repeat(leftPad) + "│" +
+            System.out.println(" ".repeat(leftPad) + "|" +
                     " ".repeat(pad2) + msg +
                     " ".repeat(boxWidth - 2 - pad2 - msg.length()) +
-                    "│");
+                    "|");
         } else {
             for (Items.Item i : items) {
                 String name = "- " + i.name();
                 int pad2 = (boxWidth - 2 - name.length());
                 if (pad2 < 0) pad2 = 0;
-                System.out.println(" ".repeat(leftPad) + "│ " +
-                        name + " ".repeat(pad2 - 1) + "│");
+                System.out.println(" ".repeat(leftPad) + "| " +
+                        name + " ".repeat(pad2 - 1) + "|");
             }
         }
 
-        System.out.println(" ".repeat(leftPad) + bottom);
+        System.out.println(" ".repeat(leftPad) + borderBottom);
         System.out.println();
     }
 }

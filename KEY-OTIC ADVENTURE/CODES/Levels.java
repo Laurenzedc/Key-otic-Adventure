@@ -12,11 +12,21 @@ public class Levels {
 
         public boolean play(Game game) {
 
-            System.out.println("\n" + getNarration());
-            game.getInventory().showInventory();
+            // Level narration (Game will pause inside ambient + narration)
+            game.clearConsole();
+            game.playLevelAmbientAnimation(getLevelNumber());
+            game.displayText(getNarration());
+            game.pause(); // pause after level narration
 
+            // Show inventory
+            game.showInventoryOpenAnimation();
+            game.getInventory().showInventory();
+            game.pause(); // pause after inventory
+
+            // Start obstacle music
             SoundPlayer.playLoop("obstacle_level" + getLevelNumber() + ".wav");
 
+            // Shuffle puzzles for variety
             List<Puzzles.Puzzle> all = getPuzzles();
             Collections.shuffle(all);
 
@@ -25,45 +35,50 @@ public class Levels {
 
             for (Puzzles.Puzzle puzzle : selected) {
 
+                // Each puzzle clears scene at start
                 boolean solved = puzzle.play(game);
 
                 if (!solved) {
-                    if (!game.getCurrentHero().isAlive()) {
-                        if (!game.hasAnyLivingCharacter()) return false;
+                    // Hero died, check if any characters remain
+                    if (!game.getCurrentHero().isAlive() && !game.hasAnyLivingCharacter()) {
+                        SoundPlayer.stopLoop();
+                        return false; // no one left, game over
                     }
-
-                    System.out.println("\nThe obstacle reforms… try again.\n");
-
-                    return play(game);
+                    // If hero is still alive or switched, continue to next puzzle
                 }
 
-                SoundPlayer.stopLoop(); 
+                // After puzzle (solved or failed but still alive), travel
+                SoundPlayer.stopLoop();
                 SoundPlayer.playLoop("travel_loop.wav");
 
-                game.chooseDirection(getLevelNumber());
+                game.showTravelAnimation(); // has its own pause
+                game.chooseDirection(getLevelNumber()); // pauses at end
 
                 SoundPlayer.stopLoop();
-
                 SoundPlayer.playLoop("obstacle_level" + getLevelNumber() + ".wav");
             }
 
-            SoundPlayer.stopLoop();     
+            // LEVEL COMPLETE
+            SoundPlayer.stopLoop();
             SoundPlayer.playSound("level_complete.wav");
 
-            System.out.println("\nYou successfully complete Level " + getLevelNumber() + "!");
+            game.clearConsole();
+            game.displayText("");
+            game.displayText("You successfully complete Level " + getLevelNumber() + "!");
+            game.pause();
+
             return true;
         }
     }
 
-
-    // ---------------- LEVELS 1–5 ---------------- //
+    // ---------------- LEVELS 1-5 ---------------- //
 
     public static class Level1 extends LevelBase {
         @Override public List<Puzzles.Puzzle> getPuzzles() { return Puzzles.level1Puzzles(); }
         @Override public int getLevelNumber() { return 1; }
         @Override public String getNarration() {
             return """
-                   🌿 The jungle awakens around you.
+                   The jungle awakens around you.
                    The air vibrates with ancient life.
                    """;
         }
@@ -74,7 +89,7 @@ public class Levels {
         @Override public int getLevelNumber() { return 2; }
         @Override public String getNarration() {
             return """
-                   🌊 The River of Trials flows with shifting currents.
+                   The River of Trials flows with shifting currents.
                    Reflections twist into unfamiliar shapes.
                    """;
         }
@@ -85,7 +100,7 @@ public class Levels {
         @Override public int getLevelNumber() { return 3; }
         @Override public String getNarration() {
             return """
-                   ❄️ Frost and silence echo through the cavern.
+                   Frost and silence echo through the cavern.
                    Every surface glows with ancient runes.
                    """;
         }
@@ -96,7 +111,7 @@ public class Levels {
         @Override public int getLevelNumber() { return 4; }
         @Override public String getNarration() {
             return """
-                   🪨 The Ravine of Echoes roars with unseen winds.
+                   The Ravine of Echoes roars with unseen winds.
                    Sounds twist into warnings and illusions.
                    """;
         }
@@ -107,7 +122,7 @@ public class Levels {
         @Override public int getLevelNumber() { return 5; }
         @Override public String getNarration() {
             return """
-                   🌀 The Heart of the Game pulses with cosmic energy.
+                   The Heart of the Game pulses with deep energy.
                    Symbols float and rearrange in the air.
                    """;
         }
