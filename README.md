@@ -410,4 +410,66 @@ This project was developed for academic purposes under **CS 211 — Object-Orien
 - GeeksForGeeks OOP resources  
 
 
+<h1 align="center">「 ✦ Contributors ✦ 」</h1>
+
+<div align="center">
+
+<table>
+<tr>
+
+<!-- Member 1 -->
+<td align="center" width="250">
+
+<img src="images/member1.png" width="180" alt="Cindy Mortel">
+<br><br>
+
+<a href="https://github.com/cindymortel-cs" target="_blank">
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+       width="40" 
+       alt="GitHub Logo">
+</a>
+
+<br>
+<strong>@cindymortel-cs</strong>
+
+</td>
+
+<!-- Member 2 -->
+<td align="center" width="250">
+
+<img src="images/member2.png" width="180" alt="Laurenzedc">
+<br><br>
+
+<a href="https://github.com/Laurenzedc" target="_blank">
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+       width="40" 
+       alt="GitHub Logo">
+</a>
+
+<br>
+<strong>@Laurenzedc</strong>
+
+</td>
+
+<!-- Member 3 -->
+<td align="center" width="250">
+
+<img src="images/member3.png" width="180" alt="Rechelalala">
+<br><br>
+
+<a href="https://github.com/rechelalala" target="_blank">
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+       width="40" 
+       alt="GitHub Logo">
+</a>
+
+<br>
+<strong>@rechelalala</strong>
+
+</td>
+
+</tr>
+</table>
+
+</div>
 
