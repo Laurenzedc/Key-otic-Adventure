@@ -49,6 +49,63 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 ---
 <h1 align="center">「 ✦ How to Play ✦ 」 </h1>
 
+<div align="center">
+
+<table>
+<tr>
+<td align="center">
+  
+### **1. Enter the Game**  
+<img src="images/1st.png"><br>
+*Main Interface*
+
+</td>
+<td align="center">
+
+### **2. Game Map**  
+<img src="images/2nd.png"><br>
+*View all regions before beginning.*
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+
+### **3. Character Selection**  
+<img src="images/3rd.png"><br>
+*Choose your hero and ability.*
+
+</td>
+<td align="center">
+
+### **4. Puzzle Challenges**  
+<img src="images/4th.png"><br>
+*Solve pattern, rhythm, and logic puzzles.*
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+
+### **5. Path & Direction Choices**  
+<img src="images/5th.png"><br>
+*Decide your route and actions.*
+
+</td>
+<td align="center">
+
+### **6. Game Completion**  
+<img src="images/6th.png"><br>
+*Reach the Heart of the Game.*
+
+</td>
+</tr>
+</table>
+
+</div>
+
 ---
 <h1 align="center">「 ✦ Character Showcase ✦ 」 </h1>
 
