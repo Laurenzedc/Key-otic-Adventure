@@ -454,7 +454,7 @@ This project was developed for academic purposes under **CS 211 — Object-Orien
 <!-- Member 3 -->
 <td align="center" width="250">
 
-<img src="images/rechel.jpg" width="180" alt="Rechelalala">
+<img src="images/rechel.JPG" width="180" alt="Rechelalala">
 <br><br>
 
 <a href="https://github.com/rechelalala" target="_blank">
