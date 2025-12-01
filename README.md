@@ -56,14 +56,14 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 <td align="center">
   
 ### **1. Enter the Game**  
-<img src="images/1st.png"><br>
+<img src="images/1st.png" width="700"><br>
 *Main Interface*
 
 </td>
 <td align="center">
 
 ### **2. Game Map**  
-<img src="images/2nd.png"><br>
+<img src="images/2nd.png" width="700"><br>
 *View all regions before beginning.*
 
 </td>
@@ -73,14 +73,14 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 <td align="center">
 
 ### **3. Character Selection**  
-<img src="images/3rd.png"><br>
+<img src="images/3rd.png" width="700"><br>
 *Choose your hero and ability.*
 
 </td>
 <td align="center">
 
 ### **4. Puzzle Challenges**  
-<img src="images/4th.png"><br>
+<img src="images/4th.png" width="700"><br>
 *Solve pattern, rhythm, and logic puzzles.*
 
 </td>
@@ -90,14 +90,14 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 <td align="center">
 
 ### **5. Path & Direction Choices**  
-<img src="images/5th.png"><br>
+<img src="images/5th.png" width="700"><br>
 *Decide your route and actions.*
 
 </td>
 <td align="center">
 
 ### **6. Game Completion**  
-<img src="images/6th.png"><br>
+<img src="images/6th.png" width="700"><br>
 *Reach the Heart of the Game.*
 
 </td>
@@ -105,7 +105,6 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 </table>
 
 </div>
-
 ---
 <h1 align="center">「 ✦ Character Showcase ✦ 」 </h1>
 
