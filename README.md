@@ -420,7 +420,7 @@ This project was developed for academic purposes under **CS 211 — Object-Orien
 <!-- Member 1 -->
 <td align="center" width="250">
 
-<img src="images/member1.png" width="180" alt="Cindy Mortel">
+<img src="images/cindy.png" width="180" alt="Cindy Mortel">
 <br><br>
 
 <a href="https://github.com/cindymortel-cs" target="_blank">
@@ -437,7 +437,7 @@ This project was developed for academic purposes under **CS 211 — Object-Orien
 <!-- Member 2 -->
 <td align="center" width="250">
 
-<img src="images/member2.png" width="180" alt="Laurenzedc">
+<img src="images/aldred.png" width="180" alt="Laurenzedc">
 <br><br>
 
 <a href="https://github.com/Laurenzedc" target="_blank">
@@ -454,7 +454,7 @@ This project was developed for academic purposes under **CS 211 — Object-Orien
 <!-- Member 3 -->
 <td align="center" width="250">
 
-<img src="images/member3.png" width="180" alt="Rechelalala">
+<img src="images/rechel.png" width="180" alt="Rechelalala">
 <br><br>
 
 <a href="https://github.com/rechelalala" target="_blank">
