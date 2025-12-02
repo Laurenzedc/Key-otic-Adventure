@@ -48,7 +48,7 @@ Your ultimate goal: **Unlock the Final Chest containing the Ultimate Gem**—you
 | **DialogueLibrary.java** | 💬 Provides character dialogues and reactions. |
 | **Levels.java** | 🌍 Contains all level classes extending `LevelBase`. |
 | **Puzzles.java** | 🧩 Defines puzzles, sequences, and mechanics. |
-| **InputHandler.java** | 🧩 Manages user inputs. |
+| **InputHandler.java** | ✍️ Manages user inputs. |
 | **SoundPlayer.java** | 🔊 Manages sound playback. |
 | **sounds/** | 🎵 Contains game audio files. |
 | **images/** | 🖼️ Contains README image assets. |
